@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "fs": "^0.0.1-security",
+    "mongoose": "^6.7.0"
+  },
+  "name": "ttbot",
+  "version": "1.0.0",
+  "description": "A Discord bot for playing Triple Triad, based on the MMORPG Final Fantasy XIV.",
+  "main": "index.js",
+  "scripts": {
+    "deploy:commands": "node deploycommands.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XiuhcoatlSlayer/tripletriaddiscordbot.git"
+  },
+  "author": "XiuhcoatlSlayer#7391",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XiuhcoatlSlayer/tripletriaddiscordbot/issues"
+  },
+  "homepage": "https://github.com/XiuhcoatlSlayer/tripletriaddiscordbot#readme"
+}
