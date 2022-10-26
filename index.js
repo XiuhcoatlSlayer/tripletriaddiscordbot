@@ -22,12 +22,12 @@ for (const file of commandFiles) {
 };
 
 //Loading Interactions into the client
-/* client.interactions = new Collection();
+client.interactions = new Collection();
 const interactionFiles = fs.readdirSync('./interactions').filter(file => file.endsWith('.js'));
 for (const ifile of interactionFiles) {
 	const inter = require(`./interactions/${ifile}`);
 	client.interactions.set(inter.name, inter);
-}; */
+};
 
 //Client Event Handler
 const eventFiles = fs.readdirSync(`./events`).filter(efile => efile.endsWith(`.js`));
