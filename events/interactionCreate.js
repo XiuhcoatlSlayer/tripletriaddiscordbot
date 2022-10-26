@@ -6,7 +6,7 @@ module.exports = {
         let inter = client.interactions.get(interaction.customId);
 
         //If no customId then its a command
-         if (!inter) {
+        if (!inter) {
             inter = client.interactions.find(i => i.name === "command");
         };
 
