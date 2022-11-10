@@ -9,7 +9,8 @@
   "description": "A Discord bot for playing Triple Triad, based on the MMORPG Final Fantasy XIV.",
   "main": "index.js",
   "scripts": {
-    "deploy:commands": "node deploycommands.js"
+    "deploy:commands": "node Scripts/deploycommands.js",
+    "register:cards": "node Scripts/registercards.js"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,4 @@
-{
-    "1":
+module.exports = [
         {
             "name" : "Dodo",
             "id" : 1,
@@ -7,9 +6,9 @@
             "right": 2,
             "left": 4,
             "bottom": 3,
-            "type": ""
+            "type": "",
+            "drop" : ["First Deck"]
         },
-    "2" :
         {
             "name" : "Tonberry",
             "id" : 2,
@@ -17,9 +16,9 @@
             "right": 2,
             "left": 2,
             "bottom": 7,
-            "type": ""
+            "type": "",
+            "drop" : ["Memeroon"]
         },
-    "3" :
         {
             "name" : "Sabotender",
             "id" : 3,
@@ -27,9 +26,9 @@
             "right": 3,
             "left": 3,
             "bottom": 3,
-            "type": ""
+            "type": "",
+            "drop" : ["First Deck"]
         },
-    "4" :
         {
             "name" : "Spriggan",
             "id" : 4,
@@ -37,9 +36,9 @@
             "right": 3,
             "left": 4,
             "bottom": 4,
-            "type": ""
+            "type": "",
+            "drop" : ["Triple Triad Master"]
         },
-    "5" :
         {
             "name" : "Pudding",
             "id" : 5,
@@ -47,9 +46,9 @@
             "right": 4,
             "left": 5,
             "bottom": 3,
-            "type": ""
+            "type": "",
+            "drop" : ["Roger"]
         },
-    "6" :
         {
             "name" : "Bomb",
             "id" : 6,
@@ -57,9 +56,9 @@
             "right": 4,
             "left": 3,
             "bottom": 3,
-            "type": ""
+            "type": "",
+            "drop" : ["First Deck"]
         },
-    "7" :
         {
             "name" : "Mandragora",
             "id" : 7,
@@ -67,9 +66,9 @@
             "right": 2,
             "left": 3,
             "bottom": 5,
-            "type": ""
+            "type": "",
+            "drop" : ["First Deck"]
         },
-    "8" :
         {
             "name" : "Coblyn",
             "id" : 8,
@@ -77,9 +76,9 @@
             "right": 3,
             "left": 4,
             "bottom": 3,
-            "type": ""
+            "type": "",
+            "drop" : ["Maisenta", "Wymond"]
         },
-    "9" :
         {
             "name" : "Morbol",
             "id" : 9,
@@ -87,9 +86,9 @@
             "right": 2,
             "left": 2,
             "bottom": 5,
-            "type": ""
+            "type": "",
+            "drop" : ["Roger"]
         },
-    "10" :
         {
             "name" : "Coeurl",
             "id" : 10,
@@ -97,6 +96,7 @@
             "right": 5,
             "left": 5,
             "bottom": 2,
-            "type": ""
+            "type": "",
+            "drop" : ["First Deck"]
         }
-}
+    ];

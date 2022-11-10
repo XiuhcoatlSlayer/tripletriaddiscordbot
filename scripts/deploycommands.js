@@ -1,12 +1,12 @@
 const { REST, Routes } = require("discord.js");
-const config = require("./config");
+const config = require("../config");
 const fs = require(`fs`);
 
 //Creating commands json array
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
+	const command = require(`../commands/${file}`);
 	commands.push(command.data.toJSON());
 };
 
