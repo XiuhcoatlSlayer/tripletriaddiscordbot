@@ -23,7 +23,7 @@ for (const file of commandFiles) {
 
 //Loading Interactions into the client
 client.interactions = new Collection();
-const interactionFiles = fs.readdirSync('./interactions').filter(file => file.endsWith('.js'));
+const interactionFiles = fs.readdirSync('./interactions').filter(ifile => ifile.endsWith('.js'));
 for (const ifile of interactionFiles) {
 	const inter = require(`./interactions/${ifile}`);
 	client.interactions.set(inter.name, inter);
