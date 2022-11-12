@@ -6,10 +6,7 @@ client.config = require(`./config`);
 
 //Connecting to Mongo Server
 const mongoose = require(`mongoose`);
-mongoose.connect(client.config.mongoPath, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(client.config.mongoPath).then(() => {
 	console.log("Connected to the database!");
 });
 
