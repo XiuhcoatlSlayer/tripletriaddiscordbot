@@ -2,7 +2,7 @@ const { Client, Collection, GatewayIntentBits } = require(`discord.js`);
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages], allowedMentions: { parse: [] } });
 const fs = require(`fs`);
 client.config = require(`./config`);
-// client.functions = require(`./utils/functions.js`);
+client.functions = require(`./utils/functions.js`);
 
 //Connecting to Mongo Server
 const mongoose = require(`mongoose`);
