@@ -1,4 +1,4 @@
-const { Users, Cards } = require("../models/models");
+const { Users, Cards, Decks } = require("../models/models");
 
 async function checkUser(userID) { //checks to see if the user already started/has cards
 

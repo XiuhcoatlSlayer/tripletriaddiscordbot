@@ -1,4 +1,4 @@
-const { Users, Cards } = require("../models/models");
+const { Users, Cards, Decks } = require("../models/models");
 
 module.exports = {
     name: `messageCreate`,
