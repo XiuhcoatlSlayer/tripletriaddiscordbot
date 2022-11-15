@@ -1,3 +1,5 @@
+const { Users, Cards } = require("../models/models");
+
 module.exports = {
     name: `messageCreate`,
     async execute(message, client) {
