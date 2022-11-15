@@ -1,8 +1,7 @@
 module.exports = {
     name: `interactionCreate`,
     async execute(interaction, client) {
-
-         //Find interaction in Collection by customId
+        //Find interaction in Collection by customId
         let inter = client.interactions.get(interaction.customId);
 
         //If no customId then its a command

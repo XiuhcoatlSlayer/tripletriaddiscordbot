@@ -3,15 +3,14 @@ const { Users, Cards, Decks } = require("../models/models");
 module.exports = {
     name: `messageCreate`,
     async execute(message, client) {
-
         if (client.user && message.mentions.has(client.user)) {
             let messageArray = message.content.split(/ +/); //regex to remove any additional spaces
             let mentions = messageArray[0].match(/^<@!?(\d+)>$/); //regex to match discord pings
 
-            if(!mentions) return;
+            if (!mentions) return;
 
             if (mentions[1] === client.user.id) { //if the message starts with the bot mention
-                if(!messageArray[1]) return;
+                if (!messageArray[1]) return;
                 if (messageArray[1].toLowerCase() === 'eval') { //check if command is eval
                     if (client.config.ownerIDs.includes(message.author.id)) { //if the user running the command is an owner
                         let args = messageArray.slice(2);
@@ -36,11 +35,9 @@ module.exports = {
                             };
 
                             message.channel.send(`\`\`\`js\n${clean(evaled).replace(client.config.discordToken, "????")}\n\`\`\``);
-
                         } catch (err) {
                             message.channel.send(`\`Error:\n\` \`\`\`js\n${clean(err)}\n\`\`\``);
                         };
-
                     };
                 };
             };
