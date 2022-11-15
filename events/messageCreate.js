@@ -35,7 +35,7 @@ module.exports = {
                                 });
                             };
 
-                            message.channel.send(`\`\`\`js\n${clean(evaled).replace(client.config.token, "????")}\n\`\`\``);
+                            message.channel.send(`\`\`\`js\n${clean(evaled).replace(client.config.discordToken, "????")}\n\`\`\``);
 
                         } catch (err) {
                             message.channel.send(`\`Error:\n\` \`\`\`js\n${clean(err)}\n\`\`\``);
