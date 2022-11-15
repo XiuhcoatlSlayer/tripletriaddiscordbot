@@ -4,28 +4,26 @@ const Cards = require("../models/models");
 const config = require("../config");
 
 mongoose.connect(config.mongoPath).then(async () => {
-	console.log("Connected to the database!");
+    console.log("Connected to the database!");
 
-	if (process.argv[2] === "reset") { //Drops card collection so that we can create it again. Only do this if you're reloading the databse with a card update.
-		await mongoose.connection.collections['cards'].drop().then( console.log("Collection dropped. Reinitializing..."));
-	};
+    if (process.argv[2] === "reset") { //Drops card collection so that we can create it again. Only do this if you're reloading the databse with a card update.
+        await mongoose.connection.collections['cards'].drop().then(console.log("Collection dropped. Reinitializing..."));
+    };
 
-	const cards = cardData.map((data) => { // map cards into [new Cards.save()]
-		return new Cards({
-			name: data.name,
-			id: data.id,
-			top: data.top,
-			right: data.right,
-			left: data.left,
-			bottom: data.bottom,
-			type: data.type,
-			drop: data.drop
-		}).save();
+    const cards = cardData.map((data) => { // map cards into [new Cards.save()]
+        return new Cards({
+            name: data.name,
+            id: data.id,
+            top: data.top,
+            right: data.right,
+            left: data.left,
+            bottom: data.bottom,
+            type: data.type,
+            drop: data.drop
+        }).save();
+    })
+    await Promise.all(cards) // resolve all promises before continuing
 
-
-	})
-	await Promise.all(cards) // resolve all promises before continuing
-
-	console.log("Finished~");
-	process.exit();
+    console.log("Finished~");
+    process.exit();
 });
