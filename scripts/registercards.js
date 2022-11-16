@@ -14,12 +14,14 @@ mongoose.connect(config.mongoPath).then(async () => {
         return new Cards({
             name: data.name,
             id: data.id,
+            stars: data.stars,
             top: data.top,
             right: data.right,
             left: data.left,
             bottom: data.bottom,
             type: data.type,
-            drop: data.drop
+            drop: data.drop,
+            price: data.price
         }).save();
     })
     await Promise.all(cards) // resolve all promises before continuing

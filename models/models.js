@@ -3,12 +3,14 @@ const mongoose = require(`mongoose`);
 const cardsSchema = new mongoose.Schema({
     name: String,
     id: Number,
+	stars: Number,
     top: Number,
     right: Number,
     left: Number,
     bottom: Number,
     type: String,
-    drop: [String]
+    drop: [String],
+	price: Number
 });
 
 const decksSchema = new mongoose.Schema({

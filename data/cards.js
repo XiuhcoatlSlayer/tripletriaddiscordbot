@@ -2,6 +2,7 @@ module.exports = [
     {
         "name": "Dodo",
         "id": 1,
+        "stars": 1,
         "top": 4,
         "right": 2,
         "left": 4,
@@ -12,6 +13,7 @@ module.exports = [
     {
         "name": "Tonberry",
         "id": 2,
+        "stars": 1,
         "top": 2,
         "right": 2,
         "left": 2,
@@ -22,6 +24,7 @@ module.exports = [
     {
         "name": "Sabotender",
         "id": 3,
+        "stars": 1,
         "top": 4,
         "right": 3,
         "left": 3,
@@ -32,6 +35,7 @@ module.exports = [
     {
         "name": "Spriggan",
         "id": 4,
+        "stars": 1,
         "top": 2,
         "right": 3,
         "left": 4,
@@ -42,6 +46,7 @@ module.exports = [
     {
         "name": "Pudding",
         "id": 5,
+        "stars": 1,
         "top": 2,
         "right": 4,
         "left": 5,
@@ -52,6 +57,7 @@ module.exports = [
     {
         "name": "Bomb",
         "id": 6,
+        "stars": 1,
         "top": 3,
         "right": 4,
         "left": 3,
@@ -62,6 +68,7 @@ module.exports = [
     {
         "name": "Mandragora",
         "id": 7,
+        "stars": 1,
         "top": 4,
         "right": 2,
         "left": 3,
@@ -72,6 +79,7 @@ module.exports = [
     {
         "name": "Coblyn",
         "id": 8,
+        "stars": 1,
         "top": 3,
         "right": 3,
         "left": 4,
@@ -82,6 +90,7 @@ module.exports = [
     {
         "name": "Morbol",
         "id": 9,
+        "stars": 1,
         "top": 5,
         "right": 2,
         "left": 2,
@@ -92,11 +101,123 @@ module.exports = [
     {
         "name": "Coeurl",
         "id": 10,
+        "stars": 1,
         "top": 2,
         "right": 5,
         "left": 5,
         "bottom": 2,
         "type": "",
         "drop": ["First Deck"]
+    },
+    {
+        "name": "Ahriman",
+        "id": 11,
+        "stars": 1,
+        "top": 5,
+        "right": 5,
+        "left": 2,
+        "bottom": 2,
+        "type": "",
+        "drop": ["Ourdilic", "ARR Dungeon", "Bronze Pack"]
+    },
+    {
+        "name": "Goobbue",
+        "id": 12,
+        "stars": 1,
+        "top": 2,
+        "right": 5,
+        "left": 2,
+        "bottom": 5,
+        "type": ["Aurifort of the Three Clubs", "Mother Miounne", "Bronze Pack"]
+    },
+    {
+        "name": "Chocobo",
+        "id": 13,
+        "stars": 1,
+        "top": 3,
+        "right": 7,
+        "left": 1,
+        "bottom": 2,
+        "type": "",
+        "drop": ["Guhtwint of the Three Diamonds", "Purchase"],
+        "price": 600
+    },
+    {
+        "name": "Amalj'aa",
+        "id": 14,
+        "stars": 1,
+        "top": 1,
+        "right": 4,
+        "left": 1,
+        "bottom": 7,
+        "type": "Beastman",
+        "drop": ["Memeroon", "Silver Pack"]
+    },
+    {
+        "name": "Ixal",
+        "id": 15,
+        "stars": 1,
+        "top": 6,
+        "right": 1,
+        "left": 4,
+        "bottom": 3,
+        "type": "Beastman",
+        "drop": ["Jonas of the Three Spades", "Joellaut", "Silver Pack"]
+    },
+    {
+        "name": "Sylph",
+        "id": 16,
+        "stars": 1,
+        "top": 2,
+        "right": 4,
+        "left": 4,
+        "bottom": 5,
+        "type": "Beastman",
+        "drop": ["Maisenta", "Silver Pack"]
+    },
+    {
+        "name": "Kobold",
+        "id": 17,
+        "stars": 1,
+        "top": 2,
+        "right": 2,
+        "left": 6,
+        "bottom": 4,
+        "type": "Beastman",
+        "drop": ["Silver Pack"]
+    },
+    {
+        "name": "Sahagin",
+        "id": 18,
+        "stars": 1,
+        "top": 4,
+        "right": 5,
+        "left": 3,
+        "bottom": 3,
+        "type": "Beastman",
+        "drop": ["Baderon", "ARR Dungeon"]
+    },
+    {
+        "name": "Tataru Taru",
+        "id": 19,
+        "stars": 1,
+        "top": 7,
+        "right": 2,
+        "left": 2,
+        "bottom": 3,
+        "type": "Scion",
+        "drop": ["Silver Pack"]
+    },
+    {
+        "name": "Moogle",
+        "id": 20,
+        "stars": 1,
+        "top": 2,
+        "right": 1,
+        "left": 7,
+        "bottom": 3,
+        "type": "Beastman",
+        "drop": ["Jonas of the Three Spades", "Trachtoum", "Purchase"],
+        "price": 840
     }
 ];
