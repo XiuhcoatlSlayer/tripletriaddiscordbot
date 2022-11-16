@@ -128,7 +128,8 @@ module.exports = [
         "right": 5,
         "left": 2,
         "bottom": 5,
-        "type": ["Aurifort of the Three Clubs", "Mother Miounne", "Bronze Pack"]
+        "type": "",
+        "drop": ["Aurifort of the Three Clubs", "Mother Miounne", "Bronze Pack"]
     },
     {
         "name": "Chocobo",

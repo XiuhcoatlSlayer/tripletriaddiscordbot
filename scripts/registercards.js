@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const cardData = require("../data/cards");
-const Cards = require("../models/models");
+const { Cards } = require("../models/models");
 const config = require("../config");
 
 mongoose.connect(config.mongoPath).then(async () => {
