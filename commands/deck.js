@@ -13,6 +13,7 @@ module.exports = {
                     option
                         .setName('decktoview')
                         .setDescription('The deck you want to view.')
+                        .setRequired(true)
                         .addChoices(
                             { name: '1', value: '1' },
                             { name: '2', value: '2' },
@@ -31,6 +32,7 @@ module.exports = {
                     option
                         .setName('decktodelete')
                         .setDescription('The deck you want to delete.')
+                        .setRequired(true)
                         .addChoices(
                             { name: '1', value: '1' },
                             { name: '2', value: '2' },
@@ -123,6 +125,34 @@ module.exports = {
                         return interaction.reply({ content: `You do not own one or more of these cards! Please make sure you have obtained a card you're trying to use in your deck!`, ephemeral: true });
                     };
 
+                    /*
+                    Rules for creating Decks in Triple Triad:
+                    1. Deck must have 5 cards.
+                    2. Deck cannot have any duplicate cards.
+                    3. Deck can only have 2 cards that are higher than 3 stars (4/5).
+                    4. Deck can only have 1 card that is a 5 star.
+                    */
+
+                    //rule 2:
+                    const cardArray = [card1ID, card2ID, card3ID, card4ID, card5ID];
+                    const cardSet = new Set(cardArray);
+                    if (cardSet.size !== cardArray.length) { //Sets must be unique, so if this is true then there are not 5 unique cards in the deck
+                        return interaction.reply({ content: `You cannot have duplicate cards in a deck!`, ephemeral :true });
+                    };
+
+                    //rule 3:
+                    const cardStarsArray = [card1.stars, card2.stars, card3.stars, card4.stars, card5.stars];
+                    const fourStarsCheck = cardStarsArray.filter(star => star > 3);
+                    if (fourStarsCheck.length > 2) {
+                        return interaction.reply({ content: `You can only have two cards of rarity 4 or higher in a deck!`, ephemeral: true });
+                    };
+
+                    //rule 4:
+                    const fiveStarsCheck = cardStarsArray.filter(star => star > 4);
+                    if (fiveStarsCheck.length > 1) {
+                        return interaction.reply({ content: `You can only have one five star card in your deck!`, ephemeral: true });
+                    };
+
                     const newDeck = new Decks({
                         userID: interaction.user.id,
                         userSlot: slot,
@@ -166,32 +196,32 @@ module.exports = {
                     let deckString4 = "";
                     let deckString5 = "";
 
-                    if(currentDecks[1]) {
+                    if(currentDecks[1] && currentDecks[1] !== null) {
                         const deck1cards = [ currentDecks[1].card1[0], currentDecks[1].card2[0], currentDecks[1].card3[0], currentDecks[1].card4[0], currentDecks[1].card5[0]];
                         deck1cards.forEach(card => {
                             deckString1 = deckString1 + `${client.functions.idToEmoji(card.id)} - ${client.functions.starToEmoji(card.stars)} ${card.name}\n`
                         });
                     };
 
-                    if(currentDecks[2]) {
+                    if(currentDecks[2] && currentDecks[2] !== null) {
                         const deck2cards = [ currentDecks[2].card1[0], currentDecks[2].card2[0], currentDecks[2].card3[0], currentDecks[2].card4[0], currentDecks[2].card5[0]];
                         deck2cards.forEach(card => {
                             deckString2 = deckString2 + `${client.functions.idToEmoji(card.id)} - ${client.functions.starToEmoji(card.stars)} ${card.name}\n`
                         });
                     };
-                    if(currentDecks[3]) {
+                    if(currentDecks[3] && currentDecks[3] !== null) {
                         const deck3cards = [ currentDecks[3].card1[0], currentDecks[3].card2[0], currentDecks[3].card3[0], currentDecks[3].card4[0], currentDecks[3].card5[0]];
                         deck3cards.forEach(card => {
                             deckString3 = deckString3 + `${client.functions.idToEmoji(card.id)} - ${client.functions.starToEmoji(card.stars)} ${card.name}\n`
                         });
                     };
-                    if(currentDecks[4]) {
+                    if(currentDecks[4] && currentDecks[4] !== null) {
                         const deck4cards = [ currentDecks[4].card1[0], currentDecks[4].card2[0], currentDecks[4].card3[0], currentDecks[4].card4[0], currentDecks[4].card5[0]];
                         deck4cards.forEach(card => {
                             deckString4 = deckString4 + `${client.functions.idToEmoji(card.id)} - ${client.functions.starToEmoji(card.stars)} ${card.name}\n`
                         });
                     };
-                    if(currentDecks[5]) {
+                    if(currentDecks[5] && currentDecks[5] !== null) {
                         const deck5cards = [ currentDecks[5].card1[0], currentDecks[5].card2[0], currentDecks[5].card3[0], currentDecks[5].card4[0], currentDecks[5].card5[0]];
                         deck5cards.forEach(card => {
                             deckString5 = deckString5 + `${client.functions.idToEmoji(card.id)} - ${client.functions.starToEmoji(card.stars)} ${card.name}\n`
@@ -216,7 +246,7 @@ module.exports = {
 
                     let deckString = "";
 
-                    if(currentDecks[deckToView]) {
+                    if(currentDecks[deckToView] && currentDecks[deckToView] !== null) {
                         const deckcards = [ currentDecks[deckToView].card1[0], currentDecks[deckToView].card2[0], currentDecks[deckToView].card3[0], currentDecks[deckToView].card4[0], currentDecks[deckToView].card5[0]];
                         deckcards.forEach(card => {
                             deckString = deckString + `${client.functions.idToEmoji(card.id)} - ${client.functions.starToEmoji(card.stars)} ${card.name}\n`
