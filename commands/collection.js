@@ -1,26 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require(`discord.js`);
-const { Users, Cards } = require("../models/models");
-
-function idToEmoji(number) { //converts the cards ID to numbers of emojis
-
-    const emojiArray = ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"];
-    const numArray = String(number).split('').map(str => emojiArray[str]);
-
-    return numArray.join('');
-
-};
-
-function starToEmoji(number) { //converts the cards star count to star emojis
-
-    switch(number) {
-        case 1: return "⭐";
-        case 2: return "⭐⭐";
-        case 3: return "⭐⭐⭐";
-        case 4: return "⭐⭐⭐⭐";
-        case 5: return "⭐⭐⭐⭐⭐";
-    } ;
-
-};
+const { Users } = require("../models/models");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -60,7 +39,7 @@ module.exports = {
                         cardType = card[0].type;
                     };
 
-                    const infoString = `ID: ${idToEmoji(card[0].id)} - ${card[0].name} - Star Ranking: ${starToEmoji(card[0].stars)}\nType - ${cardType}\n\nCard Face:\n🟦 ${idToEmoji(card[0].top)} 🟦\n${idToEmoji(card[0].left)} 🟦 ${idToEmoji(card[0].right)}\n🟦 ${idToEmoji(card[0].bottom)} 🟦`
+                    const infoString = `ID: ${client.functions.idToEmoji(card[0].id)} - ${card[0].name} - Star Ranking: ${client.functions.starToEmoji(card[0].stars)}\nType - ${cardType}\n\nCard Face:\n🟦 ${client.functions.idToEmoji(card[0].top)} 🟦\n${client.functions.idToEmoji(card[0].left)} 🟦 ${client.functions.idToEmoji(card[0].right)}\n🟦 ${client.functions.idToEmoji(card[0].bottom)} 🟦`
                     return interaction.reply({content: `${infoString}`});
 
                 }
@@ -68,7 +47,7 @@ module.exports = {
 
             let cardString = ""
             obtainedCards.forEach(card => {
-                cardString = cardString + `${idToEmoji(card.id)} - ${starToEmoji(card.stars)} ${card.name}\n`
+                cardString = cardString + `${client.functions.idToEmoji(card.id)} - ${client.functions.starToEmoji(card.stars)} ${card.name}\n`
             });
 
             const cardEmbed = new EmbedBuilder() //embed showing all of their cards at once. 
@@ -78,7 +57,7 @@ module.exports = {
                     { name: `Cards Obtained`, value: cardString }
                 )
                 .setTimestamp()
-                .setFooter({text: 'To see information on a specific card you own, run \`/collection [id]\`'});
+                .setFooter({text: 'To see information on a specific card you own, run /collection [id]'});
 
             interaction.reply({ embeds: [cardEmbed] });
         });

@@ -16,6 +16,7 @@ module.exports = {
 
         const newUser = new Users({
             userID: interaction.user.id,
+            balance: 100,
 
             cards: firstDeck
         });

@@ -14,7 +14,8 @@ const cardsSchema = new mongoose.Schema({
 });
 
 const decksSchema = new mongoose.Schema({
-    name: String,
+    userID: Number,
+    userSlot: Number,
     card1: [cardsSchema],
     card2: [cardsSchema],
     card3: [cardsSchema],
@@ -24,6 +25,7 @@ const decksSchema = new mongoose.Schema({
 
 const userSchema = new mongoose.Schema({
     userID: Number,
+    balance: Number,
 
     cards: [cardsSchema],
     decks: [decksSchema]
